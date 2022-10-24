@@ -1,0 +1,30 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (userConfig, defaultConfig) {
+  _lodash2.default.defaults(userConfig, defaultConfig);
+  userConfig.modules = mergeModules(userConfig.modules, defaultConfig.modules);
+  userConfig.options = _lodash2.default.defaults(userConfig.options, defaultConfig.options);
+  return userConfig;
+};
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function mergeModules(userModules, defaultModules) {
+  if (_lodash2.default.isArray(userModules)) {
+    return _lodash2.default.mapValues(defaultModules, () => userModules);
+  }
+
+  if (userModules === 'all') {
+    return _lodash2.default.mapValues(defaultModules, () => ['responsive', 'group-hover', 'hover', 'focus-within', 'focus', 'active']);
+  }
+
+  return _lodash2.default.defaults(userModules, defaultModules);
+}

@@ -1,0 +1,23 @@
+.multiselect.active{
+  @apply bg-very-light;
+}
+
+.multiselect.active .multiselect_options{
+  @apply pt-2 pl-2 pr-2;
+}
+
+.multiselect_dropdown {
+  @apply bg-very-light p-2;
+}
+
+.multiselect_dropdown button{
+  @apply block w-full text-left text-text-color;
+}
+
+.multiselect_dropdown button:hover{
+  @apply bg-lighter;
+}
+
+.multiselect_dropdown button.selected{
+  @apply bg-lighter;
+}

@@ -1,0 +1,36 @@
+{
+    "name": "devsfort/fortblog",
+    "description": "Fort Blog Publishing Framework.",
+    "keywords": ["framework", "laravel", "blog","fort","publishing"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Haseeb Ahmad",
+            "email": "hahmad748@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3||^7.4||^8.0",
+        "laravel/framework": "^7.0||^8.0||^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fortblog\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Fortblog\\FortblogServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

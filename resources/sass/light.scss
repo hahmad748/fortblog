@@ -1,0 +1,120 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@import "animations";
+@import "editor";
+@import "multiselect";
+@import "modal";
+
+#alert {
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background: #000000ba;
+}
+
+#alert svg {
+    display: block;
+    margin: 0 auto;
+    width: 4rem;
+    height: 4rem;
+}
+
+#alert .dialog {
+    @apply bg-contrast;
+    width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+body{
+    @apply bg-contrast;
+}
+
+.btn-primary{
+    @apply border border-primary text-primary p-2 rounded no-underline;
+}
+
+.btn-primary:hover{
+    @apply bg-primary text-contrast;
+}
+
+.btn-primary[disabled]{
+    @apply text-light bg-contrast border-light cursor-wait;
+}
+
+.btn-primary:focus{
+    @apply outline-none;
+}
+
+.btn-light{
+    @apply border border-light text-light p-2 rounded no-underline;
+}
+
+.btn-light:hover{
+    @apply bg-light text-contrast;
+}
+
+.btn-light[disabled]{
+    @apply text-light bg-contrast border-light cursor-wait;
+}
+
+.btn-light:focus{
+    @apply outline-none;
+}
+
+.btn-sm{
+    @apply py-1 px-2;
+}
+
+.input-group{
+    @apply border-b border-very-light pt-4 pb-2;
+}
+
+.input-label{
+    @apply font-bold block;
+}
+
+.input{
+    @apply mt-3 w-full bg-contrast p-0 appearance-none text-text-color;
+}
+
+.input:focus{
+    @apply outline-none;
+}
+
+textarea, input{
+    @apply bg-contrast text-text-color;
+}
+
+select{
+    @apply bg-very-light text-text-color;
+}
+
+[contenteditable]:focus{
+    outline: 0;
+}
+
+.dropdown-content{
+    @apply bg-contrast border border-lighter rounded absolute z-50 whitespace-no-wrap shadow;
+}
+
+@tailwind utilities;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+    border: none;
+    -webkit-text-fill-color: config('colors.text-color');
+    -webkit-box-shadow: 0 0 0px 1000px config('colors.contrast') inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: config('colors.text-color');
+}
