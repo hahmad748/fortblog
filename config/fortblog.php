@@ -13,7 +13,17 @@ return [
     |
     */
 
-    'database_connection' => env('Fortblog_DB_CONNECTION', 'fortblog'),
+    'database_connection' => env('FORTBLOG_DB_CONNECTION', 'mysql'),
+    /*
+    |--------------------------------------------------------------------------
+    | Fortblog ADMIN Account
+    |--------------------------------------------------------------------------
+    |
+    | These credentials will be user for the admin account when installing the FORTBLOG.
+    |
+    */
+    'admin_email' => env('FORTBLOG_ADMIN_EMAIL','admin@mail.com'),
+    'admin_password' => env('FORTBLOG_ADMIN_PASSWORD','admin@123'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,9 +36,9 @@ return [
     |
     */
 
-    'storage_disk' => env('Fortblog_STORAGE_DISK', 'local'),
+    'storage_disk' => env('FORTBLOG_STORAGE_DISK', 'local'),
 
-    'storage_path' => env('Fortblog_STORAGE_PATH', 'public/fortblog/images'),
+    'storage_path' => env('FORTBLOG_STORAGE_PATH', 'public/fortblog/images'),
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +50,7 @@ return [
     |
     */
 
-    'domain' => env('Fortblog_DOMAIN'),
+    'domain' => env('FORTBLOG_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +62,7 @@ return [
     |
     */
 
-    'path' => env('Fortblog_PATH', 'fortblog'),
+    'path' => env('FORTBLOG_PATH', 'fortblog'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +73,7 @@ return [
     |
     */
 
-    'middleware_group' => env('Fortblog_MIDDLEWARE_GROUP', 'web'),
+    'middleware_group' => env('FORTBLOG_MIDDLEWARE_GROUP', 'web'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,7 +86,7 @@ return [
     |
     */
 
-    'preview_path' => '/{postSlug}',
+    'preview_path' => '/blog/{postSlug}',
 
     'editor' => [
 

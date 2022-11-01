@@ -43,13 +43,13 @@ class MigrateCommand extends Command
         ]);
 
         if ($shouldCreateNewAuthor) {
-            $email = ! $this->argument('email') ? 'admin@mail.com' : $this->argument('email');
-            $password = ! $this->argument('password') ? Str::random() : $this->argument('password');
+            $email = ! $this->argument('email') ? config('fortblog.admin_email') : $this->argument('email');
+            $password = ! $this->argument('password') ? config('fortblog.admin_password') : $this->argument('password');
 
             FortblogAuthor::create([
                 'id' => (string) Str::uuid(),
-                'name' => 'Regina Phalange',
-                'slug' => 'regina-phalange',
+                'name' => 'John Doe',
+                'slug' => 'john-doe',
                 'bio' => 'This is me.',
                 'email' => $email,
                 'password' => Hash::make($password),
